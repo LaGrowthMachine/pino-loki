@@ -1,16 +1,16 @@
 {
-  "name": "pino-loki",
+  "name": "@lagrowthmachine/pino-loki",
   "type": "commonjs",
   "version": "2.5.0",
   "packageManager": "pnpm@9.9.0",
   "description": "A transport for pino that sends messages to Loki",
-  "author": "Julien Ripouteau <julien@ripouteau.com>",
+  "author": "Fork from Julien Ripouteau <julien@ripouteau.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/Julien-R44",
   "homepage": "https://github.com/Julien-R44/pino-loki#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Julien-R44/pino-loki.git"
+    "url": "https://github.com/LaGrowthMachine/pino-loki"
   },
   "bugs": {
     "url": "https://github.com/Julien-R44/pino-loki/issues"
@@ -46,11 +46,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && unbuild",
+    "build": "rm -rf dist && tsc",
     "dev": "unbuild --stub",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "prepublishOnly": "pnpm build",
+    "prepublishOnly": "npm run build",
     "release": "bumpp --commit --push --tag && pnpm publish",
     "stub": "unbuild --stub",
     "quick:test": "node -r ts-node/register bin/test.ts",
